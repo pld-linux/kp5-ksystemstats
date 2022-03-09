@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.24.2
+%define		kdeplasmaver	5.24.3
 %define		qtver		5.9.0
 %define		kpname		ksystemstats
 Summary:	ksystemstats
 Name:		kp5-%{kpname}
-Version:	5.24.2
+Version:	5.24.3
 Release:	1
 License:	BSD Clause 2
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	ac62ca07c302105ef6b5615fd4053465
+# Source0-md5:	91a2aab921e13ae27fb144ae4de416ea
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= 5.15.0
 BuildRequires:	cmake >= 2.8.12
