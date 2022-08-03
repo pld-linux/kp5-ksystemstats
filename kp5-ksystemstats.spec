@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.25.3
+%define		kdeplasmaver	5.25.4
 %define		qtver		5.15.2
 %define		kpname		ksystemstats
 Summary:	ksystemstats
 Name:		kp5-%{kpname}
-Version:	5.25.3
+Version:	5.25.4
 Release:	1
 License:	BSD Clause 2
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8896a1fc39e94124061cea7de71fe52a
+# Source0-md5:	5a8ef1866697cf5a660a59213d2f38e7
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= 5.15.0
 BuildRequires:	cmake >= 2.8.12
