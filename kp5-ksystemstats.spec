@@ -1,36 +1,37 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.93.0
+%define		kdeplasmaver	5.27.10
 %define		qtver		5.15.2
 %define		kpname		ksystemstats
 Summary:	ksystemstats
 Name:		kp5-%{kpname}
-Version:	5.93.0
-Release:	0.1
+Version:	5.27.10
+Release:	1
 License:	BSD Clause 2
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	36abf1ab8997fe174351fb717b153424
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	fd93592f9895c5c09f4c0db771c1710a
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= 5.15.0
+BuildRequires:	Qt5Core-devel >= 5.15.0
 BuildRequires:	cmake >= 3.16.0
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= 5.82
-BuildRequires:	kf6-kcoreaddons-devel >= 5.85.0
-BuildRequires:	kf6-kdbusaddons-devel >= 5.82
-BuildRequires:	kf6-kio-devel >= 5.82
-BuildRequires:	kf6-networkmanager-qt-devel >= 5.82
-BuildRequires:	kf6-solid-devel >= 5.85.0
+BuildRequires:	kf5-extra-cmake-modules >= 5.82
+BuildRequires:	kf5-kcoreaddons-devel >= 5.85.0
+BuildRequires:	kf5-kdbusaddons-devel >= 5.82
+BuildRequires:	kf5-kio-devel >= 5.82
+BuildRequires:	kf5-networkmanager-qt-devel >= 5.82
+BuildRequires:	kf5-solid-devel >= 5.85.0
 BuildRequires:	kp5-libksysguard-devel
 BuildRequires:	libnl-devel
+BuildRequires:	udev-devel
+
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
-BuildRequires:	qt6-build >= %{qtver}
-BuildRequires:	qt6-qmake
+BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt5-qmake
 BuildRequires:	rpmbuild(macros) >= 1.596
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	udev-devel
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -68,5 +69,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kstatsviewer
 %attr(755,root,root) %{_bindir}/ksystemstats
 %{systemduserunitdir}/plasma-ksystemstats.service
-%{_libdir}/qt6/plugins/ksystemstats
-%{_datadir}/dbus-1/services/org.kde.ksystemstats1.service
+%{_libdir}/qt5/plugins/ksystemstats
+%{_datadir}/dbus-1/services/org.kde.ksystemstats.service
